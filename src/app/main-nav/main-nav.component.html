@@ -1,0 +1,16 @@
+<nav mat-tab-nav-bar color="primary">
+  <a mat-tab-link
+     [routerLink]="['/all']"
+     routerLinkActive #rla="routerLinkActive"
+     [active]="rla.isActive">
+    All-Facts
+  </a>
+  <a mat-tab-link
+     
+     routerLinkActive #rla="routerLinkActive"
+     [active]="rla.isActive">
+    My-Facts
+  </a>
+</nav>
+
+<router-outlet></router-outlet>
