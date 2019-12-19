@@ -11,6 +11,10 @@ export class AllFactsComponent implements OnInit {
   constructor(private factsService:FactsService) { }
 
   ngOnInit() {
+    this.factsService.getAllFacts().subscribe(facts => {
+      console.log(this.factsService.getAllFacts());
+    })
+    
   }
 
 }
