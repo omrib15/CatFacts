@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FactsService } from '../../services/facts.service';
 
 @Component({
   selector: 'app-all-facts',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AllFactsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private factsService:FactsService) { }
 
   ngOnInit() {
   }
