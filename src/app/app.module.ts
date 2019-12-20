@@ -11,6 +11,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainNavComponent } from './components/main-nav/main-nav.component';
 import { AllFactsComponent } from './components/all-facts/all-facts.component';
 
+const routes: Routes = [
+  { path: 'all', component: AllFactsComponent },
+];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,11 +29,7 @@ import { AllFactsComponent } from './components/all-facts/all-facts.component';
     MatToolbarModule,
     MatTabsModule,
     HttpClientModule,
-    RouterModule.forRoot([
-      
-      { path: 'all', component: AllFactsComponent },
-      
-    ])
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]

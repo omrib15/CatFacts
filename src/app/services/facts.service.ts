@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class FactsService {
-  factsUrl:string = 'http://cat-fact.herokuapp.com/facts';
+  factsUrl:string = 'http://localhost:3000/api/facts';
 
   constructor(private http:HttpClient) { }
 

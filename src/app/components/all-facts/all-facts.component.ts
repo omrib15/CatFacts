@@ -12,7 +12,7 @@ export class AllFactsComponent implements OnInit {
 
   ngOnInit() {
     this.factsService.getAllFacts().subscribe(facts => {
-      console.log(this.factsService.getAllFacts());
+      console.log(facts);
     })
     
   }
