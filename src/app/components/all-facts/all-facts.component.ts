@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FactsService } from '../../services/facts.service';
+import { Fact } from '../../models/fact';
 
 @Component({
   selector: 'app-all-facts',
@@ -7,7 +8,7 @@ import { FactsService } from '../../services/facts.service';
   styleUrls: ['./all-facts.component.css']
 })
 export class AllFactsComponent implements OnInit {
-  allFacts;
+  allFacts: Fact[];
 
   constructor(private factsService:FactsService) { }
 
