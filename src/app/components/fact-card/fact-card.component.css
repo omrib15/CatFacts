@@ -1,9 +1,13 @@
 .fact-card {
-    max-width: 400px;
-    margin: auto;
-    width: 50%;
+    max-width: 500px;
+    
+    margin: 30px auto;
+    width: 70%;
     border: 3px opaque green;
     
   }
   
-  
+  .fact-card-content{
+    max-height: 150px;
+    overflow: auto;
+  }
