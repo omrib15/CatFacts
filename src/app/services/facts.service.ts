@@ -11,15 +11,13 @@ export class FactsService {
 
   constructor(private http:HttpClient) { }
 
-  initFacts(){
-    this.http.get(this.factsUrl).subscribe(facts => {
-      this.allFacts = facts['all'];
-      console.log('allFacts',this.allFacts);
-    });
+  getAllFacts():Observable<any>{
+    return this.http.get(this.factsUrl)
   }
 
   getFactsText(){
-    
+    const texts = this.allFacts.map(fact => fact['text']);
+    return texts;
   }
 
 }

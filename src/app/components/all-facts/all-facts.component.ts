@@ -7,11 +7,14 @@ import { FactsService } from '../../services/facts.service';
   styleUrls: ['./all-facts.component.css']
 })
 export class AllFactsComponent implements OnInit {
+  allFacts;
 
   constructor(private factsService:FactsService) { }
 
   ngOnInit() {
-    this.factsService.initFacts();
+    this.factsService.getAllFacts().subscribe((data) => {
+      this.allFacts = data['all'];
+    });
     
   }
 
