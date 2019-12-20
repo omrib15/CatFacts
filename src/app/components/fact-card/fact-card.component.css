@@ -7,7 +7,14 @@
     
   }
   
-  .fact-card-content{
+  .fact-card-content {
     max-height: 150px;
     overflow: auto;
+  }
+
+  .fact-card-actions {
+    margin: auto;
+    width: 50%;
+  
+    text-align: center;
   }

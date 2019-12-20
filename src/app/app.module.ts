@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatCardModule } from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
 
 import { RouterModule, Routes } from '@angular/router'
@@ -32,6 +33,7 @@ const routes: Routes = [
     MatToolbarModule,
     MatTabsModule,
     MatCardModule,
+    MatButtonModule,
     HttpClientModule,
     RouterModule.forRoot(routes)
   ],
