@@ -6,7 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./fact-card.component.css']
 })
 export class FactCardComponent implements OnInit {
-  @Input() text;
+  @Input() text: string;
 
   constructor() { }
 
