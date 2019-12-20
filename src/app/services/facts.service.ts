@@ -7,11 +7,19 @@ import { Observable } from 'rxjs';
 })
 export class FactsService {
   factsUrl:string = 'http://localhost:3000/api/facts';
+  allFacts;
 
   constructor(private http:HttpClient) { }
 
-  getAllFacts():Observable<any>{
-    return this.http.get(this.factsUrl);
+  initFacts(){
+    this.http.get(this.factsUrl).subscribe(facts => {
+      this.allFacts = facts['all'];
+      console.log('allFacts',this.allFacts);
+    });
+  }
+
+  getFactsText(){
+    
   }
 
 }

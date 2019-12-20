@@ -5,7 +5,7 @@ const https = require('https');
 const catFactsUrl = 'https://cat-fact.herokuapp.com/facts';
 const frontEndUrl = 'http://localhost:4200';
 
-/* GET a guid. */
+//get all facts
 router.get('/', function(req, res, next)
     {
 	    https.get(catFactsUrl, (resp) => {
