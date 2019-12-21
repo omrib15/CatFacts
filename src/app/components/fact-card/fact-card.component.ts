@@ -3,6 +3,7 @@ import { FactsService } from '../../services/facts.service';
 import { Fact } from 'src/app/models/fact';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatIconRegistry } from '@angular/material/icon';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 /*
   This component is currently used to implement the carousel functionality,
@@ -22,7 +23,7 @@ export class FactCardComponent implements OnInit, OnChanges {
   imgName: string ;
   imgCount: number;
 
-  constructor(private factsService: FactsService , iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
+  constructor(private factsService: FactsService , iconRegistry: MatIconRegistry, sanitizer: DomSanitizer, private _snackBar: MatSnackBar) {
     this.imgCount = 10;
     //just so the first image is random
     this.imgNumber = Math.floor(Math.random() * this.imgCount);
@@ -58,9 +59,13 @@ export class FactCardComponent implements OnInit, OnChanges {
   save(){
     this.factsService.saveFact(this.fact).subscribe((ack) => {
       console.log(ack);
-      
-      alert("fact added to My-Facts");
+      this._snackBar.open('Added to My-Facts', '+', {
+        duration:  2000,
+      });
+      //alert("fact added to My-Facts");
     });
+
+    
   }
 
   nextFact(){

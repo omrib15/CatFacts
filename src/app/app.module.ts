@@ -7,6 +7,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatBadgeModule} from '@angular/material/badge';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 import { HttpClientModule } from '@angular/common/http';
@@ -40,6 +41,7 @@ import { MyFactsComponent } from './components/my-facts/my-facts.component';
     MatBadgeModule,
     MatIconModule,
     MatSelectModule,
+    MatSnackBarModule,
     HttpClientModule
   ],
   providers: [],
