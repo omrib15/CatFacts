@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FactsService } from '../../services/facts.service';
 import { Fact } from 'src/app/models/fact';
+import { DomSanitizer } from '@angular/platform-browser';
+import { MatIconRegistry } from '@angular/material/icon';
 
 /*
   This component is currently used to implement the carousel functionality,
@@ -20,12 +22,15 @@ export class FactCardComponent implements OnInit {
   imgName: string ;
   imgCount: number;
 
-  constructor(private factsService: FactsService) {
+  constructor(private factsService: FactsService , iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
     this.imgNumber = 1;
     this.imgName = `cat${this.imgNumber}.jpg`;
     this.imgCount = 10;
     this.fact = factsService.getNextFact();
-    
+    iconRegistry.addSvgIcon(
+      'thumbs-up',
+      sanitizer.bypassSecurityTrustResourceUrl('../../assets/images/icons/thumbs-up.svg'));
+
    }
 
   ngOnInit() {
