@@ -15,6 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainNavComponent } from './components/main-nav/main-nav.component';
 import { AllFactsComponent } from './components/all-facts/all-facts.component';
 import { FactCardComponent } from './components/fact-card/fact-card.component';
+import { MyFatcsComponent } from './components/my-fatcs/my-fatcs.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { FactCardComponent } from './components/fact-card/fact-card.component';
     AppComponent,
     MainNavComponent,
     AllFactsComponent,
-    FactCardComponent
+    FactCardComponent,
+    MyFatcsComponent
   ],
   imports: [
     BrowserModule,
