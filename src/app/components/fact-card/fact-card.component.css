@@ -8,19 +8,26 @@
   }
   
   .fact-card-content {
-    max-height: 150px;
+    height: 100px;
     overflow: auto;
     margin-bottom: 0;
   }
 
   .fact-card-actions {
     margin: 0 auto;
-    width: 50%;
-  
     text-align: center;
+    
   }
 
+  .fact-card-image{
+     object-fit:scale-down;
+  }
 
+  .fact-upvotes{
+    position: absolute;
+    top: 20px;
+    
+  }
 
   .fact-text {
     margin-bottom: 30px;

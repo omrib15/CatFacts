@@ -8,6 +8,7 @@ import {MatBadgeModule} from '@angular/material/badge';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 
+
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -26,7 +27,7 @@ import { MyFactsComponent } from './components/my-facts/my-facts.component';
     MainNavComponent,
     AllFactsComponent,
     FactCardComponent,
-    MyFactsComponent,
+    MyFactsComponent
   ],
   imports: [
     BrowserModule,

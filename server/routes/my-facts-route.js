@@ -14,16 +14,13 @@ router.post('/', function(req, res)
         
         userFacts.push(fact)
 
-        console.log(userFacts);
+ 
         res.header('Access-Control-Allow-Origin', frontEndUrl);
         res.send({ack: "ok"});
+        
         //TODO: check for errors
 
-        // // Header for avoiding cors block from my front end
-        // res.header('Access-Control-Allow-Origin', frontEndUrl);
         
-        // //Respond back with the data
-        // res.send(req.body);
         
     }
 );
@@ -32,6 +29,8 @@ router.post('/', function(req, res)
 router.get('/', function(req, res){
     let facts = { all: userFacts };
     res.send(facts);
+
+    //TODO: check for errors
 });
 
 

@@ -58,6 +58,7 @@ export class FactCardComponent implements OnInit, OnChanges {
   save(){
     this.factsService.saveFact(this.fact).subscribe((ack) => {
       console.log(ack);
+      
       alert("fact added to My-Facts");
     });
   }
