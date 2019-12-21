@@ -1,10 +1,15 @@
 
+
+<!-- My small feature -->
+<div class="fact-order-selector">
+    <mat-form-field>
+        <mat-label>order by</mat-label>
+        <mat-select [(value)]="order">
+            <mat-option value="random" (click)="factsService.orderByRandom()">Random</mat-option>
+            <mat-option value="upvotes" (click)="factsService.orderByUp()">Up-Votes</mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
+
 <app-fact-card *ngIf="factsService.allFacts" ></app-fact-card>
 
-
-
-<!--   [text]="allFacts[0].text"
-<div *ngFor="let fact of allFacts">
-    <p>{{ fact.text }}</p>
-</div>
--->

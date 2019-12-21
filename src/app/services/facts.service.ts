@@ -49,4 +49,29 @@ export class FactsService {
     return this.http.get(this.myFactsUrl);
   }
 
+  orderByUp(){
+        this.allFacts.sort((a,b) => ( b['upvotes'] - a['upvotes']));
+        console.log("sorted by up");
+              
+    }
+    
+  orderByRandom(){
+    this.shuffle(this.allFacts);
+    console.log("sorted by random");
+    
+  }
+
+
+  
+
+  private shuffle(arr) {
+    var j, x, i;
+    for (i = arr.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        x = arr[i];
+        arr[i] = arr[j];
+        arr[j] = x;
+    }
+  }
+
 }
