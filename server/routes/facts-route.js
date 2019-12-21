@@ -18,7 +18,6 @@ router.get('/', function(req, res, next)
         
             // The whole response has been received. send the response with the cats data
             resp.on('end', () => {
-                console.log(JSON.parse(data));
         
                 //Header for avoiding cors block from my front end
                 res.header('Access-Control-Allow-Origin', frontEndUrl);

@@ -8,14 +8,15 @@ import { Fact } from '../../models/fact';
   styleUrls: ['./all-facts.component.css']
 })
 export class AllFactsComponent implements OnInit {
-  allFacts: Fact[];
 
   constructor(private factsService:FactsService) { }
 
   ngOnInit() {
-    this.factsService.getAllFacts().subscribe((data) => {
-      this.allFacts = data['all'];
-    });
+    this.factsService.initService();
+    // this.factsService.getAllFacts().subscribe((data) => {
+    //   this.allFacts = data['all'];
+    //   this.factsService.updateAllFacts(this.allFacts);
+    // });
     
   }
 

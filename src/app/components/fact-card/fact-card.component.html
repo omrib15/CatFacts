@@ -1,11 +1,18 @@
 <mat-card class="fact-card">
-    <img mat-card-image src="../../../assets/images/cat1.jpg">
+    <img mat-card-image src="../../../assets/images/{{ imgName }}">
     <mat-card-content class="fact-card-content">
-      <p>
-        {{ text }}
+      <p class="fact-text">
+        {{ fact.text }}
       </p>
+      <mat-icon class="fact-upvotes"
+        matBadge="{{fact.upvotes}}" MatBadgeSize="small"matBadgeOverlap="false" matBadgeColor="primary"
+        svgIcon="thumbs-up" aria-hidden="false" 
+        aria-label="Example thumbs up SVG icon">
+      </mat-icon>
     </mat-card-content>
     <mat-card-actions class="fact-card-actions">
+      <button mat-button (click)="prev()">PREV</button>
       <button mat-raised-button >SAVE</button>
+      <button mat-button (click)="next()">NEXT</button>
     </mat-card-actions>
   </mat-card>
