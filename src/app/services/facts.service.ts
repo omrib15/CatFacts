@@ -24,19 +24,6 @@ export class FactsService {
     )
   }
 
-  // getAllFacts():Observable<any>{
-  //   return this.http.get(this.factsUrl);
-  // }
-
-  // updateAllFacts(all){
-  //   this.allFacts = all;
-  // }
-
-  // getFactsText(){
-  //   const texts = this.allFacts.map(fact => fact['text']);
-  //   return texts;
-  // }
-
   getNextFact(){
     const fact = this.allFacts[this.nextFactIndex++];
     this.nextFactIndex = this.nextFactIndex % this.allFacts.length;
@@ -56,6 +43,10 @@ export class FactsService {
   
     return this.http.post(this.myFactsUrl, fact);
 
+  }
+
+  getMyFacts(){
+    return this.http.get(this.myFactsUrl);
   }
 
 }
