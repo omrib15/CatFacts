@@ -1,11 +1,13 @@
 <mat-card class="fact-card">
-    <img mat-card-image src="../../../assets/images/cat1.jpg">
+    <img mat-card-image src="../../../assets/images/{{ imgName }}">
     <mat-card-content class="fact-card-content">
       <p>
         {{ text }}
       </p>
     </mat-card-content>
     <mat-card-actions class="fact-card-actions">
+      <button mat-button (click)="prevImage()">PREV</button>
       <button mat-raised-button >SAVE</button>
+      <button mat-button (click)="nextImage()">NEXT</button>
     </mat-card-actions>
   </mat-card>
