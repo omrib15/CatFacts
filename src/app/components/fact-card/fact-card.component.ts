@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { FactsService } from '../../services/facts.service';
 import { Fact } from 'src/app/models/fact';
 import { DomSanitizer } from '@angular/platform-browser';
@@ -15,17 +15,19 @@ import { MatIconRegistry } from '@angular/material/icon';
   templateUrl: './fact-card.component.html',
   styleUrls: ['./fact-card.component.css']
 })
-export class FactCardComponent implements OnInit {
+export class FactCardComponent implements OnInit, OnChanges {
   @Input() text: string;
-  fact: Fact;
+  @Input() fact: Fact;
   imgNumber: number ;
   imgName: string ;
   imgCount: number;
 
   constructor(private factsService: FactsService , iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
-    this.imgNumber = 1;
-    this.imgName = `cat${this.imgNumber}.jpg`;
     this.imgCount = 10;
+    //just so the first image is random
+    this.imgNumber = Math.floor(Math.random() * this.imgCount);
+    this.imgName = `cat${this.imgNumber}.jpg`;
+  
     this.fact = factsService.getNextFact();
     
     iconRegistry.addSvgIcon(
@@ -35,6 +37,10 @@ export class FactCardComponent implements OnInit {
    }
 
   ngOnInit() {
+  }
+
+  ngOnChanges(){
+    this.nextImage();
   }
 
   next(){

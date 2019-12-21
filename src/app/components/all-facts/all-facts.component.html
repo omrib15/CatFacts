@@ -11,5 +11,5 @@
     </mat-form-field>
 </div>
 
-<app-fact-card *ngIf="factsService.allFacts" ></app-fact-card>
+<app-fact-card *ngIf="factsService.allFacts" [fact]="factsService.getFirstFact()"></app-fact-card>
 

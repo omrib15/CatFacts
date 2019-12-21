@@ -19,7 +19,9 @@ export class FactsService {
 
   initService(){
     this.http.get(this.factsUrl).subscribe((data) => {
-        this.allFacts = data['all'];
+        const facts = data['all'];
+        this.shuffle(facts);
+        this.allFacts = facts;
       }
     )
   }
@@ -36,6 +38,10 @@ export class FactsService {
       this.nextFactIndex = this.allFacts.length - 1;
     }
     return fact;
+  }
+
+  getFirstFact(): Fact{
+    return this.allFacts[0];
   }
 
   saveFact(fact: Fact): Observable<any> {
