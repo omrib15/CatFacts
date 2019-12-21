@@ -30,7 +30,7 @@ router.post('/', function(req, res)
 
 //GET
 router.get('/', function(req, res){
-    let facts = { all: facts };
+    let facts = { all: userFacts };
     res.send(facts);
 });
 
