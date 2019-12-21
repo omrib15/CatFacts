@@ -16,7 +16,6 @@ export class MyFactsComponent implements OnInit {
   ngOnInit() {
     this.factsService.getMyFacts().subscribe((data) => {
       this.myFacts = data['all'];
-      console.log(this.myFacts);
     })
   }
 

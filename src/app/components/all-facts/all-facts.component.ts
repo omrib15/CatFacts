@@ -9,15 +9,13 @@ import { Fact } from '../../models/fact';
 })
 export class AllFactsComponent implements OnInit {
 
-  constructor(private factsService:FactsService) { }
+  selected: string;
+
+  constructor(private factsService:FactsService) {
+   }
 
   ngOnInit() {
     this.factsService.initService();
-    // this.factsService.getAllFacts().subscribe((data) => {
-    //   this.allFacts = data['all'];
-    //   this.factsService.updateAllFacts(this.allFacts);
-    // });
-    
   }
 
 }

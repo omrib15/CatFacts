@@ -1,5 +1,6 @@
-.fact-card {
-    max-width: 400px;
-  }
+
   
-  
+.fact-order-selector{
+  margin: auto auto 5px auto;
+  text-align: center;
+}
