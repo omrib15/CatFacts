@@ -6,7 +6,6 @@ import { MatCardModule } from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
 
-import { RouterModule, Routes } from '@angular/router'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -14,15 +13,11 @@ import { MainNavComponent } from './components/main-nav/main-nav.component';
 import { AllFactsComponent } from './components/all-facts/all-facts.component';
 import { FactCardComponent } from './components/fact-card/fact-card.component';
 
-const routes: Routes = [
-  { path: 'all', component: AllFactsComponent },
-];
 
 @NgModule({
   declarations: [
     AppComponent,
     MainNavComponent,
-    AllFactsComponent,
     AllFactsComponent,
     FactCardComponent
   ],
@@ -34,8 +29,7 @@ const routes: Routes = [
     MatTabsModule,
     MatCardModule,
     MatButtonModule,
-    HttpClientModule,
-    RouterModule.forRoot(routes)
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
