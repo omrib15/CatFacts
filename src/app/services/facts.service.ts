@@ -53,7 +53,9 @@ export class FactsService {
   saveFact(fact: Fact) {
     console.log(fact);
   
-    this.http.get(this.myFactsUrl).subscribe();
+    this.http.post(this.myFactsUrl, fact ).subscribe((data) => {
+      console.log(data);
+    });
 
     // this.http.post(this.myFactsUrl, JSON.stringify(fact), {responseType: 'text'}).subscribe((ack) => {
     //   console.log(ack);

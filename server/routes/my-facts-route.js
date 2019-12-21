@@ -10,17 +10,22 @@ const userFacts = [];
 //Post 
 router.post('/', function(req, res)
     {
-        console.log(req);
+        const fact = req.body;
         
-        // Header for avoiding cors block from my front end
-        res.header('Access-Control-Allow-Origin', frontEndUrl);
+        userFacts.push(fact)
+
+        //TODO: check for errors
+
+        // // Header for avoiding cors block from my front end
+        // res.header('Access-Control-Allow-Origin', frontEndUrl);
         
-        //Respond back with the data
-        res.send(req.body);
-        
+        // //Respond back with the data
+        // res.send(req.body);
         
     }
 );
+
+
 
 
 module.exports = router;
