@@ -1,27 +1,18 @@
 # CatsApp
+Love em' or hate em', cats are here to stay. Might as well know some facts about them.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20.
+## Run instructions
 
-## Development server
+### install npm dependencys:
+Run `npm install` and wait for download to finish.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Startup the server:
+inside 'server' directory, run `node server.js`
 
-## Code scaffolding
+### Run angular's dev server 
+Run `ng serve -o` for the dev server. this will take a few seconds and then the browser will open at localhost:4200
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
