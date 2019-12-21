@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Fact } from '../models/fact';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -50,16 +51,11 @@ export class FactsService {
     return fact;
   }
 
-  saveFact(fact: Fact) {
+  saveFact(fact: Fact): Observable<any> {
     console.log(fact);
   
-    this.http.post(this.myFactsUrl, fact ).subscribe((data) => {
-      console.log(data);
-    });
+    return this.http.post(this.myFactsUrl, fact);
 
-    // this.http.post(this.myFactsUrl, JSON.stringify(fact), {responseType: 'text'}).subscribe((ack) => {
-    //   console.log(ack);
-    // });
   }
 
 }

@@ -7,13 +7,16 @@ const frontEndUrl = 'http://localhost:4200';
 const userFacts = [];
 
 
-//Post 
+//POST
 router.post('/', function(req, res)
     {
         const fact = req.body;
         
         userFacts.push(fact)
 
+        console.log(userFacts);
+        res.header('Access-Control-Allow-Origin', frontEndUrl);
+        res.send({ack: "ok"});
         //TODO: check for errors
 
         // // Header for avoiding cors block from my front end
@@ -25,6 +28,11 @@ router.post('/', function(req, res)
     }
 );
 
+//GET
+router.get('/', function(req, res){
+    let facts = { all: facts };
+    res.send(facts);
+});
 
 
 
