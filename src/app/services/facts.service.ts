@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { Fact } from '../models/fact';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -7,7 +8,8 @@ import { Observable } from 'rxjs';
 })
 export class FactsService {
   factsUrl:string = 'http://localhost:3000/api/facts';
-  allFacts;
+  myFactsUrl: string = 'http://localhost:3000/api/myfacts';
+  allFacts: Fact[];
   nextFactIndex;
 
   constructor(private http:HttpClient) {
@@ -47,6 +49,13 @@ export class FactsService {
       this.nextFactIndex = this.allFacts.length - 1;
     }
     return fact;
+  }
+
+  saveFact(fact: Fact): Observable<any> {
+    console.log(fact);
+  
+    return this.http.post(this.myFactsUrl, fact);
+
   }
 
 }

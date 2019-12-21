@@ -27,6 +27,7 @@ export class FactCardComponent implements OnInit {
     this.imgName = `cat${this.imgNumber}.jpg`;
     this.imgCount = 10;
     this.fact = factsService.getNextFact();
+    
     iconRegistry.addSvgIcon(
       'thumbs-up',
       sanitizer.bypassSecurityTrustResourceUrl('../../assets/images/icons/thumbs-up.svg'));
@@ -46,6 +47,13 @@ export class FactCardComponent implements OnInit {
     console.log("prev clicked");
     this.prevFact();
     this.prevImage();
+  }
+
+  save(){
+    this.factsService.saveFact(this.fact).subscribe((ack) => {
+      console.log(ack);
+      alert("fact added to My-Facts");
+    });
   }
 
   nextFact(){
