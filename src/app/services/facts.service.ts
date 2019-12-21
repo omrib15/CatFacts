@@ -10,6 +10,7 @@ export class FactsService {
   factsUrl:string = 'http://localhost:3000/api/facts';
   myFactsUrl: string = 'http://localhost:3000/api/myfacts';
   allFacts: Fact[];
+  order: string;
   nextFactIndex;
 
   constructor(private http:HttpClient) {
@@ -54,7 +55,7 @@ export class FactsService {
   getMyFacts(){
     return this.http.get(this.myFactsUrl);
   }
-
+  
   orderByUp(){
         this.allFacts.sort((a,b) => ( b['upvotes'] - a['upvotes']));
         console.log("sorted by up");

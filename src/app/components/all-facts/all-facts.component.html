@@ -1,7 +1,7 @@
 
 
 <!-- My small feature -->
-<div class="fact-order-selector">
+<div class="fact-order-selector" *ngIf="factsService.allFacts">
     <mat-form-field>
         <mat-label>order by</mat-label>
         <mat-select [(value)]="order">
