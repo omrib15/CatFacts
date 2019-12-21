@@ -1,0 +1,20 @@
+.fact-card {
+    max-width: 500px;
+    
+    margin: 30px auto;
+    width: 70%;
+    border: 3px opaque green;
+    
+  }
+  
+  .fact-card-content {
+    max-height: 150px;
+    overflow: auto;
+  }
+
+  .fact-card-actions {
+    margin: auto;
+    width: 50%;
+  
+    text-align: center;
+  }
