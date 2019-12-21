@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { Fact } from '../models/fact';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FactsService {
   factsUrl:string = 'http://localhost:3000/api/facts';
-  allFacts;
+  myFactsUrl: string = 'http://localhost:3000/api/myfacts';
+  allFacts: Fact[];
   nextFactIndex;
 
   constructor(private http:HttpClient) {
@@ -47,6 +48,16 @@ export class FactsService {
       this.nextFactIndex = this.allFacts.length - 1;
     }
     return fact;
+  }
+
+  saveFact(fact: Fact) {
+    console.log(fact);
+  
+    this.http.get(this.myFactsUrl).subscribe();
+
+    // this.http.post(this.myFactsUrl, JSON.stringify(fact), {responseType: 'text'}).subscribe((ack) => {
+    //   console.log(ack);
+    // });
   }
 
 }
